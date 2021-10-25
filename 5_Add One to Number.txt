@@ -1,0 +1,12 @@
+def plusOne(self, A):
+        num=0
+        for i in range(len(A)):
+            num=num*10 +A[i]
+        num=num+1
+        l=[]
+        while num>0:
+            d=num%10
+            num=num//10
+            l.append(d)
+        A=[ele for ele in reversed(l)]    
+        return A   

@@ -1,0 +1,19 @@
+def subUnsort(self, A):
+        #A=[e for e in A]
+        n=len(A)
+        B=sorted(A)
+        start=-1
+        end=-1
+        #if A==B:
+         #   return -1
+        for i in range(n):
+            if A[i]!=B[i]:
+                start=i
+                break
+        for i in range(n-1,-1,-1):
+            if A[i]!=B[i]:
+                end=i
+                break
+        if start==-1 and end==-1:
+            return [-1]           
+        return [start,end]                       

@@ -1,0 +1,6 @@
+def solve(self, A):
+        l=[]
+        for i in range(len(A)):
+            l.append(A[i]*A[i])
+        l.sort()    
+        return l  

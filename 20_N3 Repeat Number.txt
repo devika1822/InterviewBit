@@ -1,0 +1,9 @@
+def repeatedNumber(self, A):
+        n=len(A)
+        d=dict()
+        for i in A:
+            d[i]=d.get(i,0)+1
+        for i in d.keys():
+            if d[i]>n/3:
+                return i    
+        return -1  

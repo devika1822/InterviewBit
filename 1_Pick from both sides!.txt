@@ -1,0 +1,10 @@
+def solve(self, A, B):
+        arr=A[:B]
+        maxi=sum(arr)
+        val=maxi
+        for i in range(B):
+            add=A.pop()
+            sub=arr.pop()
+            val=val+add-sub
+            maxi=max(maxi,val)
+        return maxi    

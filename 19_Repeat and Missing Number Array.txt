@@ -1,0 +1,19 @@
+def repeatedNumber(self, A):
+        n=len(A)
+        A=sorted(A)
+        #l=list(set(A))
+        repeating=missing=0
+        for i in range(1,n):
+            if A[i]==A[i-1]:
+                repeating=A[i] 
+                A.pop(i) 
+                break  
+
+        for i in range(0,n-1):
+            if A[i]!=(i+1):
+                missing=i+1
+                break 
+        if missing==0:
+            missing=n        
+
+        return [repeating,missing]

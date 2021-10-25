@@ -1,0 +1,29 @@
+def flip(self, A):
+        n=len(A)
+        res=[]
+        a=[0]*n
+        int_max=100000000
+        for i in range(n):
+            if A[i]=='0':
+                a[i]=1
+            else:
+                a[i]=-1   
+        ms=me=0
+        k=0
+        st=int_max
+
+        for i in range(n):
+            if me+a[i]<0:
+                k=i+1
+                me=0
+            else:
+                me+=a[i]
+            if me>ms:
+                ms=me
+                st=k
+                e=i
+        if st==int_max:
+            return []
+        res.append(st+1)
+        res.append(e+1)
+        return res   

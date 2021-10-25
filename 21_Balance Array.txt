@@ -1,0 +1,28 @@
+def solve(self, A):
+        n=len(A)
+        odd_sum,even_sum=0,0
+        cnt=0
+        
+        for i in range(n):
+            if i%2==1:
+                even_sum+=A[i]
+            elif i%2==0:
+                odd_sum+=A[i]
+        #print(odd_sum,even_sum)        
+        oddl=evenl=0
+        oddr=odd_sum
+        evenr=even_sum
+        for i in range(n):
+            if i%2==0:
+                oddr-=A[i]
+                if oddr+evenl==oddl+evenr:
+                    cnt+=1
+                oddl+=A[i]
+                #print(oddr,oddl)
+            if i%2==1:
+                evenr-=A[i]
+                if oddr+evenl==oddl+evenr:
+                    cnt+=1
+                evenl+=A[i]
+                #print(evenr,evenl)
+        return cnt        
